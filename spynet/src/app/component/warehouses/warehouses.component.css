@@ -3,18 +3,25 @@
 }
 
 .divSizeWarehouses {
-    max-width: 33%;
+    width: 33%;
 }
 
 .centered {
     text-align: center;
 }
 
+.left {
+    float: left;
+}
+
+.margin_top {
+    margin-top: 50px;
+}
+
 /* Slideshow container */
 .slideshow-container {
-    max-width: 33%;
+    width: 200%;
     position: relative;
-    margin: auto;
 }
 
 /* Hide the images by default */
