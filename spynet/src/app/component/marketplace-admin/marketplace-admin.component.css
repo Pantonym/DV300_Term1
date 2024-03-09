@@ -1,11 +1,11 @@
 .mainbox {
-    height: 100%;
+    min-height: 100vh; /* Adjust height to viewport height */
     width: 100%;
     background-color: #363636;
     padding-top: 50px;
     padding-bottom: 10%;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .arrow{
@@ -23,7 +23,9 @@
     width: auto;
     height: 100%;
     background-color: rgb(212, 212, 212);
-    margin: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
@@ -75,9 +77,9 @@
     -webkit-user-select: none;
     vertical-align: middle;
     white-space: nowrap;
-  }
+}
   
-  .button-19:after {
+.button-19:after {
     background-clip: padding-box;
     background-color: rgb(1, 181, 1);
     border: solid transparent;
@@ -90,23 +92,40 @@
     right: 0;
     top: 0;
     z-index: -1;
-  }
+}
   
-  .button-19:main,
-  .button-19:focus {
+.button-19:main,
+.button-19:focus {
     user-select: auto;
-  }
+}
   
-  .button-19:hover:not(:disabled) {
+.button-19:hover:not(:disabled) {
     filter: brightness(1.1);
     -webkit-filter: brightness(1.1);
-  }
+}
   
-  .button-19:disabled {
+.button-19:disabled {
     cursor: auto;
-  }
+}
   
-  .button-19:active {
+.button-19:active {
     border-width: 4px 0 0;
     background: none;
-  }
+}
+
+.adminPanel{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+    width: auto;
+    height: fit-content;
+    background-color: rgb(212, 212, 212);
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
