@@ -1,6 +1,9 @@
 <div style="width: 100%; height: 100%; background-color: rgb(51, 50, 50); color: white; font-size: medium;">
     <div class="centered divSizeWarehouses left margin_top" style="margin-left: 25px;">
         <h2>In Stock</h2>
+        <div class="inventory-grid">
+            <app-warehouse-card *ngFor="let item of inventoryList" [item]="item" class="card"></app-warehouse-card>
+        </div>
     </div>
 
     <!-- Warehouses slides -->
