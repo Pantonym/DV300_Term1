@@ -10,7 +10,3 @@ export const appConfig: ApplicationConfig = {
 
 // To run: open terminal
 // Type: ng serve --open
-
-// npm install @coreui/coreui
-// npm install bootstrap
-// npm install @coreui/angular@4
