@@ -10,3 +10,5 @@ import { Component } from '@angular/core';
 export class DashboardComponent {
 
 }
+
+// npm install ngx-bootstrap

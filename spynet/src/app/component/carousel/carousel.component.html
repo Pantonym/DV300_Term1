@@ -1,10 +1,5 @@
-<c-carousel>
-    <c-carousel-indicators></c-carousel-indicators>
-    <c-carousel-inner>
-        <c-carousel-item *ngFor="let slide of slides">
-            <img [src]="slide.src" alt="{{ slide.title }}" class="d-block w-100" loading="lazy" />
-        </c-carousel-item>
-    </c-carousel-inner>
-    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel>
+<app-carousel>
+    <div *ngFor="let image of images" class="carousel-item">
+        <img [src]="image.url" alt="{{ image.alt }}" style="max-width: 100%;" />
+    </div>
+</app-carousel>

@@ -1,31 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { AlertModule } from '@coreui/angular';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  slides: any[] = new Array(3).fill({ id: -1, src: '', title: '', subtitle: '' });
-
-  constructor() { }
-
-  ngOnInit(): void {
-    this.slides[0] = {
-      src: './assets/img/angular.jpg',
-    };
-    this.slides[1] = {
-      src: './assets/img/react.jpg',
-    }
-    this.slides[2] = {
-      src: './assets/img/vue.jpg',
-    }
-  }
+  images = [
+    { url: 'path/to/image1.jpg', alt: 'Image 1' },
+    { url: 'path/to/image2.jpg', alt: 'Image 2' },
+    { url: 'path/to/image3.jpg', alt: 'Image 3' },
+  ];
 }
-
-// npm install @coreui/coreui
-// npm install @coreui/angular@4
-// npm install bootstrap
