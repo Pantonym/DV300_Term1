@@ -11,7 +11,10 @@ export const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "marketplace", component: MarketplaceComponent },
     { path: "marketplace-admin", component: MarketplaceAdminComponent },
-    { path: "warehouses", component: WarehousesComponent },
+    { path: "warehouses/:id", component: WarehousesComponent },
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "**", component: PagenotfoundComponent }
 ];
+
+// TODO: Nav to warehouses, by default 1 is active based on ts var
+// 3 buttons, 1 for each warehouse, and that button changes the id 

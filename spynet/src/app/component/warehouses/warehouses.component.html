@@ -1,7 +1,17 @@
 <div style="width: 100%; height: 100%; background-color: rgb(51, 50, 50); color: white; font-size: medium;">
+    <p> {{warehouseID}}</p>
+
     <div class="centered divSizeWarehouses left margin_top" style="margin-left: 25px;">
         <h2>In Stock</h2>
+
+        <app-warehouse-card *ngFor="let item of ingredientList" [item]="item"></app-warehouse-card>
     </div>
+
+    <!-- TODO: <input value="amount"
+    <input x3 *ngIf="warehouseId == 1" -->
+
+    <!-- TODO: NGIF that changes depending on what the id in the navbar is. Onclick function to inc or dec the amount to change what is rendered -->
+    <!-- <app-warehousepage-subcompoennt *ngIf="warehouse_id == 1" ></ -->
 
     <!-- Warehouses slides -->
     <div class="left margin_top" style="margin-left: 0px;">
