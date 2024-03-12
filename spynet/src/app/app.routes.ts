@@ -15,6 +15,3 @@ export const routes: Routes = [
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "**", component: PagenotfoundComponent }
 ];
-
-// TODO: Nav to warehouses, by default 1 is active based on ts var
-// 3 buttons, 1 for each warehouse, and that button changes the id 
