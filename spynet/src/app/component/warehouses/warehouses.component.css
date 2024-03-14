@@ -25,5 +25,26 @@ a {
 
 .btnWarehouse {
     padding: 5px;
+    padding-top: 7px;
     font-size: large;
+    margin-left: 10px;
+
+    border-radius: 12px;
+
+    background-color: white;
+}
+
+.arrow {
+
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transform: translateY(-50%);
+
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
