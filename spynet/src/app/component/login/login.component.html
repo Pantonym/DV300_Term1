@@ -3,13 +3,18 @@
     <h1>Please enter credentials</h1>
 
     <div style="width: 100%;">
-        <label for="inpEmail">Email</label> <br>
-        <input id="inpEmail" type="email" class="inpLogin" /> <br>
+        <form [formGroup]="login" (ngSubmit)="onSubmit()">
 
-        <br>
+            <label for="inpEmail">Email: </label>
+            <input id="inpEmail" type="email" formControlName="email" class="inpEmail"> <br>
+        
+            <br>
 
-        <label for="inpPass">Password</label> <br>
-        <input id="inpPass" type="password" class="inpLogin" /> <br>
+            <label for="inpPass">Password: </label>
+            <input id="inpPass" type="password" formControlName="password"  class="inpLogin"> <br>
+        
+            <input type="submit" value="Login" />
+        </form>
     </div>
 
     <br><br>

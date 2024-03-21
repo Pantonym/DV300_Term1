@@ -1,17 +1,6 @@
-<!-- <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <span>{{title}}</span>
-
-  if it's not working you need to import it first in app.component.ts
-  <span><a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive=page> Dashboard </a></span>
-  <span><a routerLink="/login" routerLinkActive="active"> Login </a></span>
-  <span><a routerLink="/marketplace" routerLinkActive="active"> Marketplace </a></span>
-  <span><a routerLink="/marketplace-admin" routerLinkActive="active"> Marketplace-admin </a></span>
-  <span><a routerLink="/warehouses/1" routerLinkActive="active"> Warehouse 1 </a></span>
-
-</mat-toolbar> -->
+<div id="navbar">
+  <!-- Log Out button -->
+  <span><button (click)="callLogOut()" class="btnNav">Log Out</button></span>
+</div>
 
 <router-outlet />

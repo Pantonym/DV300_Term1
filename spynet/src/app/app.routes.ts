@@ -5,13 +5,14 @@ import { MarketplaceComponent } from './component/marketplace/marketplace.compon
 import { WarehousesComponent } from './component/warehouses/warehouses.component';
 import { PagenotfoundComponent } from './component/pagenotfound/pagenotfound.component';
 import { MarketplaceAdminComponent } from './component/marketplace-admin/marketplace-admin.component';
+import { AdminAuthGuard, AuthGuard } from './component/guards/auth.guard';
 
 export const routes: Routes = [
     { path: "dashboard", component: DashboardComponent },
     { path: "login", component: LoginComponent },
-    { path: "marketplace", component: MarketplaceComponent },
-    { path: "marketplace-admin", component: MarketplaceAdminComponent },
-    { path: "warehouses/:id", component: WarehousesComponent },
+    { path: "marketplace", component: MarketplaceComponent, canActivate: [AuthGuard]  },
+    { path: "marketplace-admin", component: MarketplaceAdminComponent, canActivate: [AdminAuthGuard]  },
+    { path: "warehouses/:id", component: WarehousesComponent, canActivate: [AuthGuard] },
     { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "**", component: PagenotfoundComponent }
 ];

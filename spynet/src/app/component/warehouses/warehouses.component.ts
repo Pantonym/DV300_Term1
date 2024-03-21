@@ -16,7 +16,7 @@ import { Card3Component } from '../card-3/card-3.component';
 })
 export class WarehousesComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  warehouseID = 1;
+  public warehouseID = 1;
 
   // we are injecting our service functionality into this file
   constructor(private service: WarehouseCardService) {
@@ -46,7 +46,4 @@ export class WarehousesComponent {
   warehouseChange3() {
     this.warehouseID = 3;
   }
-
-  // TODO: Variable of navbar id to render different warehouses
-  // TODO: Components for each warehouse that can be ngIf'ed to change on the main page component
 }
