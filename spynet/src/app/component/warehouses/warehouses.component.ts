@@ -6,11 +6,15 @@ import { Ingredients } from '../../models/ingredients.model';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { Card2Component } from '../card-2/card-2.component';
 import { Card3Component } from '../card-3/card-3.component';
+import { CraftingCardComponent } from '../crafting-card/crafting-card.component';
+import { Recipe } from '../../models/recipe.model';
+import { CraftingCard2Component } from '../crafting-card-2/crafting-card-2.component';
+import { CraftingCard3Component } from '../crafting-card-3/crafting-card-3.component';
 
 @Component({
   selector: 'app-warehouses',
   standalone: true,
-  imports: [WarehouseCardComponent, Card2Component, Card3Component, CommonModule, RouterLink, RouterLinkActive],
+  imports: [WarehouseCardComponent, Card2Component, Card3Component, CommonModule, RouterLink, RouterLinkActive, CraftingCardComponent, CraftingCard2Component, CraftingCard3Component],
   templateUrl: './warehouses.component.html',
   styleUrl: './warehouses.component.css'
 })
@@ -25,12 +29,16 @@ export class WarehousesComponent {
 
   // Example of an array, but specifying that the objects should follow the inventory model
   ingredientList: Ingredients[] = [];
+  recipeList: Recipe[] = [];
 
   // initialise service data
   ngOnInit() {
     this.service.getAllInventory().subscribe((data) => {
-      console.log(data);
       this.ingredientList = data;
+    })
+
+    this.service.getAllRecipes().subscribe((data) => {
+      this.recipeList = data;
     })
   }
 

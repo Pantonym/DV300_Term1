@@ -47,7 +47,22 @@
 
     </div>
 
-    <div class="centered divSizeWarehouses left margin_top" style="margin-left: 200px;">
+    <!-- Display differing warehouse amounts -->
+    <div *ngIf="warehouseID == 1" class="centered divSizeWarehouses left margin_top" style="margin-left: 230px;">
         <h2>Can Craft</h2>
+
+        <app-crafting-card *ngFor="let item of recipeList" [recipeItem]="item"></app-crafting-card>
+    </div>
+
+    <div *ngIf="warehouseID == 2" class="centered divSizeWarehouses left margin_top" style="margin-left: 230px;">
+        <h2>In Stock</h2>
+
+        <app-crafting-card-2 *ngFor="let item of recipeList" [recipeItem]="item"></app-crafting-card-2>
+    </div>
+
+    <div *ngIf="warehouseID == 3" class="centered divSizeWarehouses left margin_top" style="margin-left: 230px;">
+        <h2>In Stock</h2>
+
+        <app-crafting-card-3 *ngFor="let item of recipeList" [recipeItem]="item"></app-crafting-card-3>
     </div>
 </div>
