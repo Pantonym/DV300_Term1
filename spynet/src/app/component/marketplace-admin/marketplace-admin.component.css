@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
+
+@font-face {
+    font-family: 'Barcode';
+    src: url('../../../assets/fonts/LibreBarcode128Text-Regular.ttf') format('truetype');
+    /* Add other font formats (e.g., woff, woff2) for better browser support */
+}
+
+.back{
+  font-size: 50px;
+  color: aliceblue;
+  font-family: 'Barcode';
+  transition: color 2s;
+}
+
 .mainbox {
-    min-height: 100vh; /* Adjust height to viewport height */
-    width: 100%;
-    background-color: #363636;
-    padding-top: 50px;
-    padding-bottom: 10%;
-    overflow-x: hidden;
-    overflow-y: auto; /* Allow vertical scrolling */
+  perspective: 1px;
+  height: 100%;
+  width: 100%;
+  /* background-color: #363636; */
+  background-image: url("../../../assets/background2.png");
+  filter: brightness(90%);
+  background-attachment: fixed;
+  box-shadow: 0 0 300px rgba(0,0,0,0.99) inset;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 20%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+    
 }
 
 .arrow{
@@ -21,21 +45,22 @@
     display: flex;
     margin: 0 auto;
     width: auto;
+    right: 50%;
     height: 100%;
-    background-color: rgb(212, 212, 212);
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    background-color: rgba(47, 47, 47, 0.9);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5px;
+
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .item{
     color: black;
-    background-color: rgb(137, 192, 137);
+    background-color: #FFFAFF;
     width: 95%;
     height: fit-content;
     margin: 2%;
@@ -48,69 +73,154 @@
 }
 
 .button-19 {
-    margin-top: -11px;
-    width: 200px;
-    appearance: button;
-    background-color: rgb(0, 212, 0);
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
-    /* box-sizing: border-box; */
-    color: #FFFFFF;
-    cursor: pointer;
-    /* display: inline-block; */
-    font-family: din-round,sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: .8px;
-    line-height: 20px;
-    /* margin: 0; */
-    outline: none;
-    overflow: visible;
-    padding: 13px 16px;
-    text-align: center;
-    text-transform: uppercase;
-    touch-action: manipulation;
-    transform: translateZ(0);
-    transition: filter .2s;
-    user-select: none;
-    -webkit-user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
+  margin-top: -11px;
+  width: 200px;
+  appearance: button;
+  background-color: rgb(0, 212, 0);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  /* box-sizing: border-box; */
+  color: #FFFFFF;
+  cursor: pointer;
+  /* display: inline-block; */
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  /* margin: 0; */
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
-  
+
 .button-19:after {
-    background-clip: padding-box;
-    background-color: rgb(1, 181, 1);
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
-    bottom: -4px;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
+  content: "PURCHASED";
+  background-clip: padding-box;
+  background-color: rgb(1, 181, 1);
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
-  
+
 .button-19:main,
 .button-19:focus {
-    user-select: auto;
+  user-select: auto;
 }
-  
+
 .button-19:hover:not(:disabled) {
-    filter: brightness(1.1);
-    -webkit-filter: brightness(1.1);
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
 }
-  
+
 .button-19:disabled {
-    cursor: auto;
+  cursor: auto;
 }
-  
+
 .button-19:active {
-    border-width: 4px 0 0;
-    background: none;
+  border-width: 4px 0 0;
+  background: none;
+}
+
+/* CSS */
+.button-57 {
+  margin-top: 5%;
+  width: 20%;
+  height: 20%;
+  border: none;
+  position: relative;
+  text-wrap: wrap;
+  overflow: hidden;
+  color: #FFFAFF;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  border-radius: 10px;
+  /* top, sides, bottom*/
+  padding: 18px 10px 17px; 
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-57 span:first-child {
+  font-size: 66px;
+  font-weight: 500px;
+  position: relative;padding-top: 50px;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  font-size: 28px;
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(2%) translateX(-30%);
+  height: 14px;
+  line-height: 13px;
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #070707;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.title{
+    width: fit-content;
+    position: absolute;
+    height: fit-content;
+    display: flex;
+    padding-left: 5%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    font-family: Barcode;
 }
 
 .adminPanel{
@@ -128,4 +238,5 @@
     padding-right: 1%;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
