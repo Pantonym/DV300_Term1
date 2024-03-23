@@ -1,34 +1,48 @@
-<div class="centered"
-    style="width: 100%; height: 100%; padding-top: 50px; background-color: rgb(51, 50, 50); color: white; font-size: medium;">
-    <h1>Please enter credentials</h1>
+<div class="centered">
 
-    <div style="width: 100%;">
+    <div class="bg"></div>
+
+    <div class="loginForm">
         <form [formGroup]="login" (ngSubmit)="onSubmit()">
 
-            <label for="inpEmail">Email: </label>
+            <h1 class="title" >ENTER CREDENTIALS</h1>
+            <br>
+
+            <label for="inpEmail">Email: </label> <br>
             <input id="inpEmail" type="email" formControlName="email" class="inpEmail"> <br>
         
             <br>
 
-            <label for="inpPass">Password: </label>
+            <label for="inpPass">Password: </label> <br>
             <input id="inpPass" type="password" formControlName="password"  class="inpLogin"> <br>
-        
-            <input type="submit" value="Login" />
+            <br>
+            <hr />    
+            <br>        
+
+            <h2>
+                PLEASE AUTHENTICATE IDENTITY WITH 
+                <br>
+                COMPANY STANDARD COMPETENCY TEST: 
+            </h2>
+            <br>
+
+
+            <!-- SLIDERS -->
+            <mat-slider>
+                <input matSliderThumb>
+            </mat-slider>
+            <mat-slider>
+                <input matSliderThumb value="100">
+            </mat-slider>
+            <!-- SLIDERS -->
+
+
+            <br>
+            <br>
+
+            <br><br>
+            <button type="submit" class="button-49" role="button">AUTHENTICATE</button>
         </form>
     </div>
 
-    <br><br>
-
-    <h2>Please solve this puzzle to verify yourself</h2>
-    <mat-slider>
-        <input matSliderThumb>
-    </mat-slider>
-
-    <mat-slider>
-        <input matSliderThumb value="100">
-    </mat-slider>
-
-    <br><br>
-
-    <button mat-raised-button color="warn"><a href="/warehouses/1">Authorize</a></button>
 </div>

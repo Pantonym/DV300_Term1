@@ -7,6 +7,19 @@ a {
     margin-left: 50px;
 }
 
+#navbar {
+    background-color: black; 
+    width: auto; 
+    text-align: center; 
+    padding: 20px;
+    background-color: rgb(51, 50, 50);
+}
+
+.btnNav {
+    font-size: large;
+    padding: 7px;
+}
+
 .divSizeWarehouses {
     width: 33%;
 }

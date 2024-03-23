@@ -1,12 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
+
+@font-face {
+    font-family: 'Barcode';
+    src: url('../../../assets/fonts/LibreBarcode128Text-Regular.ttf') format('truetype');
+    /* Add other font formats (e.g., woff, woff2) for better browser support */
+}
+
+.title{
+    font-family: "Barcode";
+    font-size: 50px;
+    margin-top: -40px;
+}
+
+/* the mainbox */
 .centered {
+    color: #FFF0FF;
     text-align: center;
+    background-image: url("../../../assets/background3.jpg");
+    width: 100%; 
+    height: 100%; 
+    padding-top: 50px; 
+    filter: brightness(80%);
+    background-attachment: fixed;
+    box-shadow: 0 0 300px rgba(0,0,0,0.99) inset;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+}
+
+hr{
+    background-color: #808080;
+    color: #808080;
+}
+
+.inpEmail{
+    border-radius: 15px;
+    padding: 10px;
+    font-size: medium;
 }
 
 .inpLogin {
     border-radius: 15px;
-
     padding: 10px;
-
     font-size: medium;
 }
 
@@ -16,3 +53,155 @@ a {
 }
 
 /* background-image: url('../../../assets/PuzzleLeft.png'); */
+
+/* CSS */
+button{
+    font-family: "Barcode";
+}
+
+.button-49,
+.button-49:after {
+    font-family: "Barcode";
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-49:after {
+    font-family: "Barcode";
+
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+    font-family: "Barcode";
+
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49,
+  .button-49:after {
+    font-family: "Barcode";
+    font-size: 40px;
+    width: 300px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
+.loginForm{
+    width: fit-content;
+    height: fit-content;
+    padding: 5%;
+    background-color: rgba(47, 47, 47, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .99;
+    visibility: visible;
+}
+  
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}

@@ -10,6 +10,8 @@ import { CraftingCardComponent } from '../crafting-card/crafting-card.component'
 import { Recipe } from '../../models/recipe.model';
 import { CraftingCard2Component } from '../crafting-card-2/crafting-card-2.component';
 import { CraftingCard3Component } from '../crafting-card-3/crafting-card-3.component';
+import { AuthService } from '../../services/auth.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-warehouses',
@@ -19,27 +21,27 @@ import { CraftingCard3Component } from '../crafting-card-3/crafting-card-3.compo
   styleUrl: './warehouses.component.css'
 })
 export class WarehousesComponent {
+  
   route: ActivatedRoute = inject(ActivatedRoute);
   public warehouseID = 1;
 
   // we are injecting our service functionality into this file
-  constructor(private service: WarehouseCardService) {
-    this.warehouseID = Number(this.route.snapshot.params['id'])
-  }
-
-  // Example of an array, but specifying that the objects should follow the inventory model
   ingredientList: Ingredients[] = [];
   recipeList: Recipe[] = [];
+
+  constructor(private service: WarehouseCardService, private authService: AuthService, private router: Router) {
+    this.warehouseID = Number(this.route.snapshot.params['id']);
+  }
 
   // initialise service data
   ngOnInit() {
     this.service.getAllInventory().subscribe((data) => {
       this.ingredientList = data;
-    })
+    });
 
     this.service.getAllRecipes().subscribe((data) => {
       this.recipeList = data;
-    })
+    });
   }
 
   // warehouse change functions
@@ -53,5 +55,10 @@ export class WarehousesComponent {
 
   warehouseChange3() {
     this.warehouseID = 3;
+  }
+
+  callLogOut() {
+    this.authService.logOut();
+    this.router.navigateByUrl("/login");
   }
 }
