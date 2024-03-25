@@ -10,7 +10,13 @@
                 <mat-card-title> Name: {{recipeItem.name}} </mat-card-title>
                 <p> {{recipeItem.description}} </p>
                 <p> Amount: {{recipeItem.totalWarehouse3}} </p>
+
                 <button (click)="craftNewRecipe(recipeItem.id!, 3)">Craft</button>
+
+                @if(this.recipeItem.isCraftable == false){
+                <p style="color: red;">Not enough ingredients available in inventory</p>
+                }
+
             </mat-card-content>
         </div>
     </div>

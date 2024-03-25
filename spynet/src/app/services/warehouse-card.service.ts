@@ -13,10 +13,10 @@ export class WarehouseCardService {
   constructor(private http: HttpClient) { }
 
   private baseURL = "http://localhost:3000/ingredients";
-  private recipeURL = "http://localhost:3000/recipes"
+  private recipeURL = "http://localhost:3000/recipes";
 
-  // get all inventory items
-  getAllInventory(): Observable<Ingredients[]> {
+  // get all ingredient items
+  getAllIngredients(): Observable<Ingredients[]> {
     return this.http.get<Ingredients[]>(`${this.baseURL}/`)
   }
 
@@ -37,39 +37,12 @@ export class WarehouseCardService {
   }
 
   // Call craft functionality
-  craftRecipe(recipeID: number, warehouseID: number) {
+  craftRecipe(recipeID: number, arrIngredients: any, warehouseID: number) {
     const craftURL = this.recipeURL + '/' + recipeID + '/craft';
 
-    this.getSingleRecipe(recipeID).subscribe((recipe: Recipe) => {
-      console.log(recipe);
-      const ingredientsNeeded: number[] = recipe.ingredientsNeeded.map(id => Number(id)); // Cast each element to number
+    console.log({ amount: 1, ingredients: arrIngredients, warehouseID: warehouseID })
 
-      // Array to store objects containing ingredient information
-      const ingredientsObjects: any[] = [];
-
-      // Iterate over ingredientsNeeded array
-      for (let k = 0; k < ingredientsNeeded.length; k++) {
-        const ingredientID = ingredientsNeeded[k]; // Directly using the ingredientID
-
-        // Make a call to fetch data using the ingredientID
-        this.fetchIngredientData(ingredientID).subscribe((ingredientData: any) => {
-          // Push fetched data into ingredientsObjects array as an object
-          ingredientsObjects.push({
-            data: ingredientData
-          });
-
-          // Check if all ingredients have been processed
-          if (ingredientsObjects.length === ingredientsNeeded.length) {
-            console.log("All ingredients fetched:", ingredientsObjects);
-            // Now you can use ingredientsObjects array with all data fetched
-          }
-        });
-      }
-
-      console.log({ amount: 1, ingredients: ingredientsObjects, warehouseID: warehouseID });
-      console.log(craftURL);
-      return this.http.put<Recipe>(craftURL, { amount: 1, ingredients: ingredientsObjects, warehouseID: warehouseID });
-    });
-  }
+    return this.http.put<Recipe>(craftURL, { amount: 1, ingredients: arrIngredients, warehouseID: warehouseID });
+  };
 
 }

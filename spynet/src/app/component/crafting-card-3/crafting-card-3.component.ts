@@ -23,11 +23,82 @@ export class CraftingCard3Component {
     totalWarehouse3: 0,
     totalAmount: 0,
     ingredientsNeeded: [],
-    isCraftable: false
+    isCraftable: true
+  }
+
+  async getIngredients(ingredientsNeeded: number[]) {
+    // Array to store objects containing ingredient information
+    const ingredientsObjects: any[] = [];
+
+    // Array to store promises of fetching ingredient data
+    const fetchPromises: Promise<void>[] = [];
+
+    // Iterate over ingredientsNeeded array
+    for (let k = 0; k < ingredientsNeeded.length; k++) {
+      const ingredientID = ingredientsNeeded[k]; // Directly using the ingredientID
+
+      // Push the promise of fetching data using the ingredientID
+      fetchPromises.push(
+        new Promise<void>((resolve, reject) => {
+          // Make a call to fetch data using the ingredientID
+          this.service.fetchIngredientData(ingredientID).subscribe((ingredientData: any) => {
+            // Push fetched data into ingredientsObjects array as an object
+            ingredientsObjects.push({ data: ingredientData });
+            resolve(); // Resolve the promise
+          }, error => {
+            reject(error); // Reject the promise if there's an error
+          });
+        })
+      );
+    }
+
+    // Wait for all ingredient fetch promises to resolve
+    await Promise.all(fetchPromises);
+
+    return ingredientsObjects;
   }
 
   // calls when clicking on craft
   craftNewRecipe(recipeID: number, warehouseID: number) {
-    this.service.craftRecipe(recipeID, warehouseID);
-  }
+
+    this.service.getSingleRecipe(recipeID).subscribe(async (recipe: Recipe) => {
+      console.log(recipe);
+
+      const ingredientsNeeded: number[] = recipe.ingredientsNeeded.map(id => Number(id)); // Cast each element to number
+
+      const ingredientsObject = await this.getIngredients(ingredientsNeeded);
+
+      // This boolean will control wether or not the recipe is craftable
+      var bCantCraft = false;
+
+      // go through the array to see if any ingredient is 0
+      for (let k = 0; k < ingredientsObject.length; k++) {
+
+        if (ingredientsObject[k].data.totalWarehouse3 <= 0) {
+          console.log('cant craft');
+          bCantCraft = true;
+        }
+
+      }
+
+      if (bCantCraft == true) {
+
+        this.recipeItem.isCraftable = false;
+        console.log(this.recipeItem.isCraftable)
+
+      } else if (bCantCraft == false) {
+
+        console.log("can craft")
+
+        this.service.craftRecipe(recipeID, ingredientsObject, warehouseID).subscribe((data) => {
+          this.recipeItem.isCraftable = true;
+          // window.location.reload();
+        });
+
+      }
+
+    }
+
+    )
+  };
 }

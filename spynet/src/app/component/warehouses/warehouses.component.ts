@@ -35,7 +35,7 @@ export class WarehousesComponent {
 
   // initialise service data
   ngOnInit() {
-    this.service.getAllInventory().subscribe((data) => {
+    this.service.getAllIngredients().subscribe((data) => {
       this.ingredientList = data;
     });
 
