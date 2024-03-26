@@ -69,34 +69,18 @@ export class CraftingCardComponent {
 
       const ingredientsObject = await this.getIngredients(ingredientsNeeded);
 
-      // This boolean will control wether or not the recipe is craftable
-      var bCantCraft = false;
-
-      // go through the array to see if any ingredient is 0
-      for (let k = 0; k < ingredientsObject.length; k++) {
-
-        if (ingredientsObject[k].data.totalWarehouse3 <= 0) {
-          console.log('cant craft');
-          bCantCraft = true;
-        }
-
-      }
-
-      if (bCantCraft == true) {
-
-        this.recipeItem.isCraftable = false;
-        console.log(this.recipeItem.isCraftable)
-
-      } else if (bCantCraft == false) {
-
-        console.log("can craft")
-
-        this.service.craftRecipe(recipeID, ingredientsObject, warehouseID).subscribe((data) => {
+      this.service.craftRecipe(recipeID, ingredientsObject, warehouseID).subscribe(
+        (data) => {
+          // Handle successful response here
           this.recipeItem.isCraftable = true;
-          // window.location.reload();
-        });
-
-      }
+          window.location.reload();
+        },
+        (error) => {
+          // Handle error response here
+          console.log(error); // Log the error
+          this.recipeItem.isCraftable = false; // Set isCraftable to false
+        }
+      );
 
     }
 

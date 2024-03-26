@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Ingredients } from '../models/ingredients.model';
 import { Recipe } from '../models/recipe.model';
 
@@ -40,9 +40,15 @@ export class WarehouseCardService {
   craftRecipe(recipeID: number, arrIngredients: any, warehouseID: number) {
     const craftURL = this.recipeURL + '/' + recipeID + '/craft';
 
-    console.log({ amount: 1, ingredients: arrIngredients, warehouseID: warehouseID })
+    console.log({ amount: 1, ingredients: arrIngredients, warehouse: warehouseID })
 
-    return this.http.put<Recipe>(craftURL, { amount: 1, ingredients: arrIngredients, warehouseID: warehouseID });
+    // it will either return the recipe, or something else (an error message)
+    return this.http.put<Recipe | any>(craftURL, { amount: 1, ingredients: arrIngredients, warehouse: warehouseID })
+    .pipe(
+      catchError(error => {
+        return throwError(error);
+      })
+    )
   };
 
 }
