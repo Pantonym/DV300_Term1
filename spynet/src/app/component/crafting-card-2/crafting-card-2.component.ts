@@ -23,6 +23,7 @@ export class CraftingCard2Component {
     totalWarehouse3: 0,
     totalAmount: 0,
     ingredientsNeeded: [],
+    image: "NaN",
     isCraftable: false
   }
 

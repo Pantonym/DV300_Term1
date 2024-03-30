@@ -6,38 +6,40 @@
     <div class="loginForm">
         <form [formGroup]="login" (ngSubmit)="onSubmit()">
 
-            <h1 class="title" >ENTER CREDENTIALS</h1>
+            <h1 class="title">ENTER CREDENTIALS</h1>
             <br>
 
             <label for="inpEmail">Email: </label> <br>
             <input id="inpEmail" type="email" formControlName="email" class="inpEmail" value="email"> <br>
-        
+
             <br>
 
             <label for="inpPass">Password: </label> <br>
-            <input id="inpPass" type="password" formControlName="password"  class="inpLogin" value="password"> <br>
+            <input id="inpPass" type="password" formControlName="password" class="inpLogin" value="password"> <br>
             <br>
-            <hr />    
-            <br>        
+            <hr />
+            <br>
 
             <h2>
-                PLEASE AUTHENTICATE IDENTITY WITH 
+                PLEASE AUTHENTICATE IDENTITY WITH
                 <br>
-                COMPANY STANDARD COMPETENCY TEST: 
+                COMPANY STANDARD COMPETENCY TEST:
             </h2>
             <br>
 
             <!-- SLIDERS -->
             <mat-slider>
-                <input matSliderThumb>
+                <input id="slider_left" formControlName="slider_left" matSliderThumb value="0">
             </mat-slider>
             <mat-slider>
-                <input matSliderThumb value="100">
+                <input id="slider_right" formControlName="slider_right" matSliderThumb value="100">
             </mat-slider>
             <!-- SLIDERS -->
 
-            <br>
-            <br>
+            <br><br>
+
+            <!-- Error message -->
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 
             <br><br>
 

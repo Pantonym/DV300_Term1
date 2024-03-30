@@ -36,6 +36,7 @@ export class WarehouseCardComponent {
     totalWarehouse3: 0,
     totalAmount: 0,
     ingredientsNeeded: [],
+    image: "NaN",
     isCraftable: false
   }
 

@@ -11,6 +11,7 @@ export interface Recipe {
     totalWarehouse3: number;
     totalAmount: number;
     ingredientsNeeded: Ingredients[];
+    image: string;
     isCraftable?: boolean;  // frontend
 
 } 
