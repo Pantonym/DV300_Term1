@@ -47,14 +47,17 @@ export class WarehousesComponent {
   // warehouse change functions
   warehouseChange1() {
     this.warehouseID = 1;
+    sessionStorage.setItem("warehouse", "1");
   }
 
   warehouseChange2() {
     this.warehouseID = 2;
+    sessionStorage.setItem("warehouse", "2");
   }
 
   warehouseChange3() {
     this.warehouseID = 3;
+    sessionStorage.setItem("warehouse", "3");
   }
 
   callLogOut() {
