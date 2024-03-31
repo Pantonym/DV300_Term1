@@ -1,6 +1,6 @@
 <mat-card class="card">
 
-    <div style="padding: 5px;">
+    <div style="padding-top: 5px;">
         <div class="left">
             <img [src]="recipeItem.image" width="80" />
         </div>
@@ -9,10 +9,9 @@
             <mat-card-content style="width: 300px; text-align: left;">
                 <mat-card-title> Name: {{recipeItem.name}} </mat-card-title>
                 <p> {{recipeItem.description}} </p>
-                <p> Amount: {{recipeItem.totalWarehouse1}} &nbsp; 
+                <p> Amount: {{recipeItem.totalWarehouse2}} &nbsp; <button class="btnCraft" (click)="craftNewRecipe(recipeItem.id!, 2)">Craft</button></p>
                 <br>
                 <br>
-                <button class="btnCraft" (click)="craftNewRecipe(recipeItem.id!, 1)">Craft</button></p>
 
                 @if(this.recipeItem.isCraftable == false){
                 <p style="color: red;">Not enough ingredients available in inventory</p>
