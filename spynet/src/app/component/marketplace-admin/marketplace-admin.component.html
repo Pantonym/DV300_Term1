@@ -29,13 +29,15 @@
         </form>
     </div>
 
-    <div class="secondaryBox">
-        <div class="item" style="display: flex; align-items: center;"> 
-            <img src="../../../assets/imgMissing.svg" alt="help me" height="70" style="margin-right: 100px; margin-bottom: 10px;"/>
-            <h2> Brand new shirt </h2> 
-            <h2 style="margin-left: auto; margin-right: 100px;"> R100000 </h2> 
-            <button class="button-19" role="button">BUY</button>
+    <div class="secondaryBox" style="display: flex; flex-direction: column;">
+
+        <div *ngFor="let item of ingredientList" class="item" style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;"> 
+            <img [src]="item.image" alt="{{item.name}}" height="100" style="margin-right: 10px;"/>
+            <h2 style="margin-right: 10px;"> {{item.name}} </h2> 
+            <h2 style="margin-right: 10px;">R{{ generateRandomNumber()}}</h2>
+            <button class="button-19" role="button" (click)="BuyIngredient(item.id!)">BUY</button>
         </div>
+        
     </div>
 </div>
 

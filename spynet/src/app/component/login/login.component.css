@@ -52,15 +52,13 @@ a {
     color: white;
 }
 
-/* background-image: url('../../../assets/PuzzleLeft.png'); */
-
-/* CSS */
 button{
     font-family: "Barcode";
 }
 
 .button-49,
 .button-49:after {
+  cursor: pointer;
     font-family: "Barcode";
     width: 150px;
     height: 76px;

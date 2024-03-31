@@ -20,6 +20,5 @@ export const AdminAuthGuard: CanActivateFn = (
 ) => {
   return inject(AuthService).isUserAdmin()
     ? true
-    // if the user is not an admin, redirect them to "/inventory"
     : inject(Router).createUrlTree(['/marketplace']);
 };
