@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { MarketplaceService } from '../../services/marketplace.service'; 
+import { MarketplaceService } from '../../services/marketplace.service';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
-import { AuthService } from '../../services/auth.service'; 
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Ingredients } from '../../models/ingredients.model';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 
 export class MarketplaceComponent implements OnInit {
   // Service injection
-  constructor(private marketplaceService: MarketplaceService, private authService: AuthService, private router: Router) {}
+  constructor(private marketplaceService: MarketplaceService, private authService: AuthService, private router: Router) { }
 
   ingredientList: Ingredients[] = [];
   warehouseId: number = parseInt(sessionStorage.getItem('warehouse') || '0');
