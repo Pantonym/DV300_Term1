@@ -35,46 +35,24 @@ export class MarketplaceComponent implements OnInit {
     return Math.floor(Math.random() * 1000) + 1;
   }
 
-  BuyIngredient(ingredientID: number) {
-    const ingredientToUpdate = this.ingredientList.find(ingredient => ingredient.id === ingredientID);
-    if (ingredientToUpdate) {
-
-      if (this.warehouseId = 1) {
-        ingredientToUpdate.totalWarehouse1 += 1;
-        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-          next: (updatedIngredient) => {
-            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-          },
-          error: (error) => {
-            console.error('Error updating ingredient in Warehouse 1:', error);
-          }
-        });
+  async buyIngredient(ingredientId: number, warehouseNumber: number) {
+    try {
+      const response = await fetch(`/ingredients/${ingredientId}/buy`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ warehouse: warehouseNumber }),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to buy ingredient');
       }
-
-      if (this.warehouseId = 2) {
-        ingredientToUpdate.totalWarehouse2 += 1;
-        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-          next: (updatedIngredient) => {
-            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-          },
-          error: (error) => {
-            console.error('Error updating ingredient in Warehouse 1:', error);
-          }
-        });
-      }
-
-      if (this.warehouseId = 3) {
-        ingredientToUpdate.totalWarehouse3 += 1;
-        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-          next: (updatedIngredient) => {
-            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-          },
-          error: (error) => {
-            console.error('Error updating ingredient in Warehouse 1:', error);
-          }
-        });
-      }
-
+  
+      const data = await response.json();
+      console.log('Ingredient purchased successfully:', data);
+    } catch (error) {
+      console.error('Error buying ingredient:', error);
     }
   }
 }
