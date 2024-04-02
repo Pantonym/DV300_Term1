@@ -9,24 +9,22 @@
         </a>
     </div>
 
-    <div class="adminPanel">
-        <form>
-            <div style="float: left; margin-right: 100px;">
-                <label for="itemName">Item Name:</label>
-                <input type="text" id="itemName" name="itemName"><br><br>
-            </div>
-            <div style="float: left; margin-right: 100px;">
-                <label for="imageUpload">Upload Image:</label>
-                <input type="file" id="imageUpload" name="imageUpload"><br><br>
-            </div>
-            <div style="float: right; margin-right: auto;">
-                <button type="submit" style="width: 150px; height: 30px; border-radius: 10px;"> Upload </button>
-            </div>
-            <div style="float: right; margin-right: 100px;">
-                <label for="itemPrice">Item Price:</label>
-                <input type="text" id="itemPrice" name="itemPrice"><br><br>
-            </div>
-        </form>
+    <div class="adminPanelHolder">
+        <div class="adminPanel">
+            <form (submit)="createIngredient(itemName.value)">
+                <div style="float: left; margin-right: 100px;">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" #itemName name="itemName"><br><br>
+                </div>
+                <div style="float: left; margin-right: 100px;">
+                    <label for="imageUpload">Upload Image:</label>
+                    <input type="file" id="imageUpload" name="imageUpload"><br><br>
+                </div>
+                <div style="float: right; margin-right: auto;">
+                    <button type="submit" style="width: 150px; height: 30px; border-radius: 10px;"> Upload </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="secondaryBox" style="display: flex; flex-direction: column;">
@@ -35,7 +33,7 @@
             <img [src]="item.image" alt="{{item.name}}" height="100" style="margin-right: 10px;"/>
             <h2 style="margin-right: 10px;"> {{item.name}} </h2> 
             <h2 style="margin-right: 10px;">R{{ generateRandomNumber()}}</h2>
-            <!-- <button class="button-19" role="button" (click)="BuyIngredient(item.id!)">BUY</button> -->
+            <button class="button-19" role="button" (click)="buyIngredient(item.id!, warehouseId)">BUY</button>
         </div>
         
     </div>

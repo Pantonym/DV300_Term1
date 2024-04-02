@@ -37,6 +37,7 @@ export class WarehousesComponent {
   ngOnInit() {
     this.service.getAllIngredients().subscribe((data) => {
       this.ingredientList = data;
+      sessionStorage.setItem("warehouse","1")
     });
 
     this.service.getAllRecipes().subscribe((data) => {

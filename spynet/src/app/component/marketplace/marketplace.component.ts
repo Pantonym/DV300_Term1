@@ -1,8 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
 import { MarketplaceService } from '../../services/marketplace.service';
-import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { Ingredients } from '../../models/ingredients.model';
@@ -37,23 +33,6 @@ export class MarketplaceComponent implements OnInit {
 
   async buyIngredient(ingredientId: number, warehouseNumber: number) {
     try {
-      // const response = await fetch(`http://localhost:3000/ingredients/${ingredientId}/buy`, {
-      //   method: 'PUT',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({ warehouse: warehouseNumber }),
-
-
-      // });
-  
-      // if (!response.ok) {
-      //   throw new Error('Failed to buy ingredient');
-      // }
-  
-      // const data = await response.json();
-      // console.log('Ingredient purchased successfully:', data);
-
       this.marketplaceService.updateIngredient(ingredientId, warehouseNumber).subscribe((data) => {
         console.log(data + " has been bought");
       })
@@ -62,4 +41,5 @@ export class MarketplaceComponent implements OnInit {
       console.error('Error buying ingredient:', error);
     }
   }
+
 }

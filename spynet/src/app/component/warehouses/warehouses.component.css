@@ -17,7 +17,8 @@ a {
 
 .mainbox{
     width: 100%; 
-    height: 200%; 
+    min-height: 250%;
+    height: fit-content;
     background-attachment: fixed;
     background-image: url("../../../assets/background4.png");
     color: white; 
@@ -26,6 +27,7 @@ a {
     background-size: cover;
     filter: brightness(90%);
     box-shadow: 0 0 300px rgba(0,0,0,0.99) inset;
+    padding-bottom: 10%;
 }
 
 #navbar {
