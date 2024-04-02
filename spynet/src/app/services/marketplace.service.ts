@@ -22,8 +22,9 @@ export class MarketplaceService {
     return this.http.get<any>(ingredientURL);
   }
 
-  updateIngredient(ingredient: Ingredients): Observable<Ingredients> {
-    return this.http.put<Ingredients>(`${this.baseURL}/${ingredient.id}`, ingredient);
+  // function to update the ingredients
+  updateIngredient(ingredientId: number, warehouseId: number): Observable<Ingredients> {
+    return this.http.put<Ingredients>(`${this.baseURL}/${ingredientId}/buy`, {warehouse: warehouseId});
   }
   
 }

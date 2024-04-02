@@ -34,46 +34,46 @@ export class MarketplaceAdminComponent implements OnInit {
      return Math.floor(Math.random() * 1000) + 1;
    }
  
-   BuyIngredient(ingredientID: number) {
-     const ingredientToUpdate = this.ingredientList.find(ingredient => ingredient.id === ingredientID);
-     if (ingredientToUpdate) {
+  //  BuyIngredient(ingredientID: number) {
+  //    const ingredientToUpdate = this.ingredientList.find(ingredient => ingredient.id === ingredientID);
+  //    if (ingredientToUpdate) {
  
-       if (this.warehouseId = 1) {
-         ingredientToUpdate.totalWarehouse1 += 1;
-         this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-           next: (updatedIngredient) => {
-             console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-           },
-           error: (error) => {
-             console.error('Error updating ingredient in Warehouse 1:', error);
-           }
-         });
-       }
+  //      if (this.warehouseId = 1) {
+  //        ingredientToUpdate.totalWarehouse1 += 1;
+  //        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
+  //          next: (updatedIngredient) => {
+  //            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
+  //          },
+  //          error: (error) => {
+  //            console.error('Error updating ingredient in Warehouse 1:', error);
+  //          }
+  //        });
+  //      }
  
-       if (this.warehouseId = 2) {
-         ingredientToUpdate.totalWarehouse2 += 1;
-         this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-           next: (updatedIngredient) => {
-             console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-           },
-           error: (error) => {
-             console.error('Error updating ingredient in Warehouse 1:', error);
-           }
-         });
-       }
+  //      if (this.warehouseId = 2) {
+  //        ingredientToUpdate.totalWarehouse2 += 1;
+  //        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
+  //          next: (updatedIngredient) => {
+  //            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
+  //          },
+  //          error: (error) => {
+  //            console.error('Error updating ingredient in Warehouse 1:', error);
+  //          }
+  //        });
+  //      }
  
-       if (this.warehouseId = 3) {
-         ingredientToUpdate.totalWarehouse3 += 1;
-         this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
-           next: (updatedIngredient) => {
-             console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
-           },
-           error: (error) => {
-             console.error('Error updating ingredient in Warehouse 1:', error);
-           }
-         });
-       }
+  //      if (this.warehouseId = 3) {
+  //        ingredientToUpdate.totalWarehouse3 += 1;
+  //        this.marketplaceService.updateIngredient(ingredientToUpdate).subscribe({
+  //          next: (updatedIngredient) => {
+  //            console.log('Ingredient updated successfully in Warehouse 1', updatedIngredient);
+  //          },
+  //          error: (error) => {
+  //            console.error('Error updating ingredient in Warehouse 1:', error);
+  //          }
+  //        });
+  //      }
  
-     }
-   }
+  //    }
+  //  }
 }

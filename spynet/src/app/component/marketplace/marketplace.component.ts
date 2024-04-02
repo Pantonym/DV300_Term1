@@ -37,20 +37,27 @@ export class MarketplaceComponent implements OnInit {
 
   async buyIngredient(ingredientId: number, warehouseNumber: number) {
     try {
-      const response = await fetch(`/ingredients/${ingredientId}/buy`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ warehouse: warehouseNumber }),
-      });
+      // const response = await fetch(`http://localhost:3000/ingredients/${ingredientId}/buy`, {
+      //   method: 'PUT',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ warehouse: warehouseNumber }),
+
+
+      // });
   
-      if (!response.ok) {
-        throw new Error('Failed to buy ingredient');
-      }
+      // if (!response.ok) {
+      //   throw new Error('Failed to buy ingredient');
+      // }
   
-      const data = await response.json();
-      console.log('Ingredient purchased successfully:', data);
+      // const data = await response.json();
+      // console.log('Ingredient purchased successfully:', data);
+
+      this.marketplaceService.updateIngredient(ingredientId, warehouseNumber).subscribe((data) => {
+        console.log(data + " has been bought");
+      })
+
     } catch (error) {
       console.error('Error buying ingredient:', error);
     }
