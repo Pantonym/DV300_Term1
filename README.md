@@ -15,7 +15,7 @@
 
 <!-- Short Description -->
 <h3 align="center">SpyNet: A Crafting and Warehouse Manager</h3>
-<p align="center"> This is a crafting and warehouse manager where PostgreSQL
+<p align="center"> This is a crafting and warehouse manager web application utilizing PostgreSQL
     <br>
     <!-- Bug and New Feature Links -->
     <a href="https://github.com/Pantonym/DV300_Term1/issues">Report Bug</a>
@@ -260,8 +260,15 @@ The following installations are required if you do not clone the repository:
 `</mat-card>`
 
 9. Inventory Stock Section - Updating Inventory Amount
-* The user is able to update the inventory amount through accessing the marketplace
-<!-- * GLEN ADD HERE -->
+* The user is able to update the inventory amount through accessing the marketplace and buying an item. Please take note, the relevant ingredient will only increment by 1
+only in the selected agents inventory. To change inventories, simply select a different one on the crafting page.
+*The admin marketplace allows admin users to add a new item to the ingredients list, take note: this new item is set to 0 across all inventories upon creation, so new stock will
+have to be purchased in every warehouse where applicable.
+*The price simulates real world stock market behavior by randomizing itself after every purchase, across all items. It also gives some errors in the console, but they have no impact 
+on the functionality of the website and can be ignored.
+*Admin users are redirected automatically to the admin marketplace, while regular users can only access the regular marketplace due to the authguard system.
+
+
 
 10. Craft Section - Crafting Recipes and Updating Inventory Amount
 * First, the data is collected:
@@ -420,12 +427,17 @@ Warehouses Page
 * A great highlight was the team working together to create a functioning application. 
 * Finding solutions to the problems we faced was very rewarding, such as how to form an ingredients array to send to the crafting functionality.
 * It was very rewarding to see the project's UI change from the simplistic original design to a much more refined and complex design, making the project much more aesthetically pleasing.
+* When the crafting section finally started working and came to life, the project felt like it was finally coming together.
+* The CSS for each page was very fun to do
 
 <!-- Challenges -->
 <!-- Explain the challenges faced with the project and why you think you faced it or how you think you'll solve it (if not solved), or how you solved it -->
 #### Challenges
 * One of the biggest challenges faced was how to force the code to wait for the ingredient data before submitting the crafting request. This was solved through a Promise Async/Await loop.
 * Changes being reverted through versions was a slight problem, however the team worked together to ensure this happened as little as possible.
+* Learning angular SQL calls was a bit challenging
+* Postgres' load times.
+* The sliders on the login page are made out of minecraft bedrock, they cannot be changed in any way.
 
 <!-- Future Implementation -->
 ### Future Implementation
