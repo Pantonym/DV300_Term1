@@ -64,6 +64,7 @@
   - [Future Implementation](#future-implementation)
 - [Final Outcome](#final-outcome)
   - [Mockups](#mockups)
+  - [Video Demonstration](#video-demonstration)
 - [License](#license)
 - [Authors](#authors)
 - [Contact](#contact)
@@ -457,8 +458,8 @@ Warehouses Page
 <br>
 
 <!-- Video Demonstration -->
-<!-- ### Video Demonstration -->
-<!-- **Video Demonstration:** <a href="">Google Drive Link</a> -->
+### Video Demonstration
+**Video Demonstration:** <a href="https://drive.google.com/file/d/1Txd197Wk5i3jK9rxGzuZIU-WJIWO6FcR/view?usp=sharing">Google Drive Link</a>
 
 <!-- LICENSE -->
 ## License
