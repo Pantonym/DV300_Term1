@@ -450,7 +450,7 @@ Warehouses Page
 ## Final Outcome
 <!-- MOCKUPS -->
 ### Mockups
-<img src="https://github.com/Pantonym/DV300_Term1/spynet/src/Assets/readmeAssets/Dashboard.jpg" alt="Mockup" style="height: 600px"/>
+<img src="https://github.com/Pantonym/DV300_Term1/tree/main/spynet/src/Assets/readmeAssets/Dashboard.jpg" alt="Mockup" style="height: 600px"/>
 <img src="spynet/src/Assets/readmeAssets/Login.jpg" alt="Mockup" style="height: 600px"/>
 <img src="spynet/src/Assets/readmeAssets/MarketplaceAdmin.jpg" alt="Mockup" style="height: 600px"/>
 <img src="spynet/src/Assets/readmeAssets/Warehouses.jpg" alt="Mockup" style="height: 600px"/>
