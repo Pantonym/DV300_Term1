@@ -12,16 +12,16 @@
     <div class="adminPanelHolder">
         <div class="adminPanel">
             <form (submit)="createIngredient(itemName.value)">
-                <div style="float: left; margin-right: 100px;">
+                <div class="adminInfo" style="float: left; margin-right: 50px; height: 100%;">
                     <label for="itemName">Item Name:</label>
                     <input type="text" id="itemName" #itemName name="itemName"><br><br>
                 </div>
-                <div style="float: left; margin-right: 100px;">
+                <div class="adminInfo" style="float: left; margin-right: 50px; height: 100%;">
                     <label for="imageUpload">Upload Image:</label>
                     <input type="file" id="imageUpload" name="imageUpload"><br><br>
                 </div>
-                <div style="float: right; margin-right: auto;">
-                    <button type="submit" style="width: 150px; height: 30px; border-radius: 10px;"> Upload </button>
+                <div class="adminInfo" style="width: 100px; float: right;">
+                    <button class="dummy" type="submit" style="width: 150px; height: 40px; border-radius: 10px; height: 100%;"> Upload </button>
                 </div>
             </form>
         </div>

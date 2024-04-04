@@ -237,14 +237,22 @@
     align-items: center;
     display: flex;
     width: fit-content;
+    min-width: 900px;
     height: fit-content;
     background-color: rgb(212, 212, 212);
     margin-left: 5%;
     margin-right: 5%;
+
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
+
     border-radius: 5px;
+    
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.dummy{
+  margin-top: -200px;
 }
