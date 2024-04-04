@@ -145,7 +145,7 @@ The following installations are required if you do not clone the repository:
 
 <!-- Main Features and Functionality -->
 ## Features and Functionality
-1. Landing Page - Page Navigation
+1. Landing Page - Page Navigation (Group Mate Responsibility: Glen)
 * Pages are connected through routing, specifically the `app.routes.ts` file.
 `export const routes: Routes = [`
 `    { path: "dashboard", component: DashboardComponent },`
@@ -157,7 +157,7 @@ The following installations are required if you do not clone the repository:
 `    { path: "**", component: PagenotfoundComponent }`
 `];`
 
-* The routes are also protected using an AuthGuard system:
+* The routes are also protected using an AuthGuard system: (Group Mate Responsibility: Nico)
 `return inject(AuthService).checkCurrentUserLoggedIn()`
 `  // if it is true, leave it as-is`
 `  ? true`
@@ -166,7 +166,7 @@ The following installations are required if you do not clone the repository:
 
 * Navigation links are added though `<a>` tags which redirect the website through using `href`. Because a navigation bar is unnecessary, each page is connected through buttons at the top or bottom of the screen, giving the impression of moving from one location to another.
 
-2. Landing Page - Website Information
+2. Landing Page - Website Information (Group Mate Responsibility: Glen)
 * The website information is stored in an accordion, which was created using the HTMLDetailsElement, as well as the HTMLSummaryElement as such:
 `<details>`
 `  <summary>`
@@ -179,7 +179,7 @@ The following installations are required if you do not clone the repository:
 
 * This was done to not overwhelm the user with too much text - they can click to activate the accordion as they go from one item ot the next.
 
-3. Authentication Page - Log In using unconventional verification methods
+3. Authentication Page - Log In using unconventional verification methods (Group Mate Responsibility: Nico)
 * Protect Users using BCrypt:
 * When the user registers, the bcrypt password is generated. Using SALT, a random value is added to the end of the encrypted password to further encrypt it. After the SALT is generated, the password is Hashed.
 `const salt = await bcrypt.genSalt(Number(process.env.SALT));`
@@ -207,7 +207,7 @@ The following installations are required if you do not clone the repository:
 `  this.errorMessage = "Competency Test Failed."`
 `}`
 
-4. Warehouse Overview Page - Individual Warehouse Information
+4. Warehouse Overview Page - Individual Warehouse Information (Group Mate Responsibility: Nico & Glen)
 * Dynamic cards are used to generate the output for each of the warehouses. There are also three buttons, each of which sends a parameter to the URL which changes which set of the cards are displayed, therefore the suer is able to see each warehouse's information. It also saves the active warehouse to SessionStorage for use in other files.
 `<button (click)="warehouseChange3()" class="btnWarehouse button-80" role="button"><a routerLink="/warehouses/1" routerLinkActive="active"> Agent Bigears: 003 `
 `</a></button>`
@@ -218,7 +218,7 @@ The following installations are required if you do not clone the repository:
 `}`
 * This also shows the requirement of having three warehouses.
 
-5. Warehouse Overview Page - Inventory Summary and Information
+5. Warehouse Overview Page - Inventory Summary and Information (Group Mate Responsibility: Nico)
 * Using a material card and an ngFor loop, the inventory item's image, name, description and total is shown.
 `<app-warehouse-card *ngFor="let item of ingredientList" [item]="item"></app-warehouse-card>`
 
@@ -237,13 +237,13 @@ The following installations are required if you do not clone the repository:
 `  </div>`
 `</mat-card>`
 
-6. Inventory Stock Section - Inventory Displaying
+6. Inventory Stock Section - Inventory Displaying (Group Mate Responsibility: Nico)
 * Using the methods listed above in point 4 and 5, the stock information is shown depending on which warehouse is selected.
 
-7. Inventory Stock Section - Inventory Navigation
+7. Inventory Stock Section - Inventory Navigation (Group Mate Responsibility: Nico)
 * Using the methods listed above in point 4 and 5, the stock changes depending on which warehouse is selected.
 
-8. Inventory Stock Section - Inventory Information
+8. Inventory Stock Section - Inventory Information (Group Mate Responsibility: Nico)
 * Displaying the Name, Category, Amount and Image:
 `<mat-card class="card">`
 `  <div style="padding: 5px;">`
@@ -260,7 +260,7 @@ The following installations are required if you do not clone the repository:
 `  </div>`
 `</mat-card>`
 
-9. Inventory Stock Section - Updating Inventory Amount
+9. Inventory Stock Section - Updating Inventory Amount (Group Mate Responsibility: Glen)
 * The user is able to update the inventory amount through accessing the marketplace and buying an item. Please take note, the relevant ingredient will only increment by 1
 only in the selected agents inventory. To change inventories, simply select a different one on the crafting page.
 *The admin marketplace allows admin users to add a new item to the ingredients list, take note: this new item is set to 0 across all inventories upon creation, so new stock will
@@ -271,7 +271,7 @@ on the functionality of the website and can be ignored.
 
 
 
-10. Craft Section - Crafting Recipes and Updating Inventory Amount
+10. Craft Section - Crafting Recipes and Updating Inventory Amount (Group Mate Responsibility: Nico)
 * First, the data is collected:
 `<button class="btnCraft" (click)="craftNewRecipe(recipeItem.id!, 1)">Craft</button></p>`
 
@@ -345,7 +345,7 @@ on the functionality of the website and can be ignored.
 `  }`
 `})`
 
-11. Craft Section - Crafting Recipes Only With Enough Inventory
+11. Craft Section - Crafting Recipes Only With Enough Inventory (Group Mate Responsibility: Glen)
 * The updateInventoryAmount Function is used to both update the amount inside of the inventory, and test to see if there are enough ingredients to craft the recipe. The following if-else statement was used:
 `if (warehouse === 1) {`
 `  // update the ingredient amount`
@@ -357,7 +357,7 @@ on the functionality of the website and can be ignored.
 `} else if (warehouse === 2) {...}`
 * The return immediately exits the function and returns a boolean showing the recipe is not craftable.
 
-12. Craft Section - Crafting Recipes Only With a Single Warehouse's Inventory
+12. Craft Section - Crafting Recipes Only With a Single Warehouse's Inventory (Group Mate Responsibility: Nico)
 * The following code is found in the updateInventoryAmount Function, directly after the code ensures ingredient has enough stock:
 `// change which warehouse is affected based on the values sent through the req.body`
 `if (warehouse === 1) {`
@@ -372,14 +372,14 @@ on the functionality of the website and can be ignored.
 `  ingredientExample!.totalWarehouse3 = ingredientExample!.totalWarehouse3 - 1;`
 `}`
 
-13. Craft Section - Crafting Recipes Only Adds to the Correct Warehouse's Amount
+13. Craft Section - Crafting Recipes Only Adds to the Correct Warehouse's Amount (Group Mate Responsibility: Glen)
 * The following excerpt from the code shown in point 10 is applicable, as it ensures only the correct warehouse is targeted:
 `if (warehouse === 1) {`
 `      // update the amount that has been crafted`
 `      recipeRequest!.totalWarehouse1 = recipeRequest!.totalWarehouse1 + amount; // updates (already incremented in frontend)`
 `    } else if (warehouse === 2) {...}`
 
-14. Craft Section - At Least 5 Craftable Items
+14. Craft Section - At Least 5 Craftable Items (Group Mate Responsibility: Glen)
 * There are 5 Craftable Items, as shown in the Demonstration Video.
 
 <!-- Development PROCESS -->
