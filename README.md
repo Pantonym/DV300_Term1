@@ -445,6 +445,8 @@ Warehouses Page
 * Change the crafting functionality to not use the recipe and ingredients tables, but to use a JoinTable function to create a combination of the two to allow for immediate access to information without the need for promises. 
 * Implement the ability for users to craft unique recipes that they make themselves. 
 * We would also like to make the website completely responsive.
+* Experience points can be added per crafted item, and the more experience you have the more items you can purchase on the marketplace.
+* Administrator can see how much stock is left in the marketplace, as well as a limited stock for the marketplace.
 
 <!-- Final Outcome -->
 ## Final Outcome
