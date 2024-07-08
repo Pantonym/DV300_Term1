@@ -1,0 +1,17 @@
+<mat-card class="card">
+
+    <div style="padding: 5px;">
+        <div class="left">
+            <img [src]="item.image" width="80" />
+        </div>
+
+        <div class="left">
+            <mat-card-content style="width: 300px; text-align: left;">
+                <mat-card-title> Name: {{item.name}} </mat-card-title>
+                <p> {{item.description}} </p>
+                <p class="amount"> Current Total: {{item.totalAmount}} </p>
+            </mat-card-content>
+        </div>
+    </div>
+
+</mat-card>

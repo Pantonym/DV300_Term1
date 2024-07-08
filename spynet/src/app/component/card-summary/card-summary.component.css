@@ -1,0 +1,13 @@
+.card {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.left {
+    float: left;
+}
+
+.amount{
+    font-weight: 700;
+    font-size: 18px;
+}

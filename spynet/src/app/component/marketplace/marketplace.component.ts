@@ -33,6 +33,7 @@ export class MarketplaceComponent implements OnInit {
 
   async buyIngredient(ingredientId: number, warehouseNumber: number) {
     try {
+      // TODO: Update total amount to reflect new total
       this.marketplaceService.updateIngredient(ingredientId, warehouseNumber).subscribe((data) => {
         console.log(data + " has been bought");
       })

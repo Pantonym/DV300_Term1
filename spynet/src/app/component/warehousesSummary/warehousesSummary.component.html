@@ -1,0 +1,26 @@
+<!-- actual page -->
+<div class="mainbox">
+    <div id="navbar">
+        <span><button (click)="callLogOut()" class="btnNav button-49" role="button"
+                style="font-family: 'Barcode'; font-size: 40px;">Log Out</button></span>
+    </div>
+
+    <div style="width: 100%; text-align: center;">
+        <button class="btnWarehouse button-80" role="button"><a routerLink="/warehouses/1" routerLinkActive="active">
+                Back to agents
+            </a></button>
+    </div>
+
+    <div class="centered left divSpacer margin_top">
+    </div>
+
+    <div class="centered left divSizeWarehouses margin_top">
+        <h2>Inventory</h2>
+
+        <app-card-summary *ngFor="let item of ingredientList" [item]="item"></app-card-summary>
+    </div>
+
+    <div class="centered left divSpacer margin_top">
+    </div>
+
+</div>

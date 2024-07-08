@@ -16,6 +16,9 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   errorMessage: string | null = null; // Initialize error message variable
 
+  sliderLeftValue: number = 0;
+  sliderRightValue: number = 100;
+
   constructor(private service: AuthService, private router: Router) { }
 
   login = new FormGroup({
