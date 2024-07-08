@@ -62,6 +62,7 @@
     - [Highlights](#highlights)
     - [Challenges](#challenges)
   - [Future Implementation](#future-implementation)
+  - [Future Implementation - successfully implemented](#future-implementation---successfully-implemented)
 - [Final Outcome](#final-outcome)
   - [Mockups](#mockups)
   - [Video Demonstration](#video-demonstration)
@@ -447,6 +448,9 @@ Warehouses Page
 * We would also like to make the website completely responsive.
 * Experience points can be added per crafted item, and the more experience you have the more items you can purchase on the marketplace.
 * Administrator can see how much stock is left in the marketplace, as well as a limited stock for the marketplace.
+
+### Future Implementation - successfully implemented
+* A summary page that lists the totals of each ingredient across all agents (warehouses)
 
 <!-- Final Outcome -->
 ## Final Outcome
