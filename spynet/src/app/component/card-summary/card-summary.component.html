@@ -9,7 +9,14 @@
             <mat-card-content style="width: 300px; text-align: left;">
                 <mat-card-title> Name: {{item.name}} </mat-card-title>
                 <p> {{item.description}} </p>
-                <p class="amount"> Current Total: {{item.totalAmount}} </p>
+
+                <div style="display: flex;">
+                    <p class="amount"> Agent Cortez: {{item.totalWarehouse1}} </p>
+                    <p class="amount" style="border-left: 2px solid black; border-right: 2px solid black;"> Agent Natalia: {{item.totalWarehouse2}} </p>
+                    <p class="amount"> Agent Bigears: {{item.totalWarehouse3}} </p>
+                </div>
+                
+                <p class="amountTotal"> Current Total: {{item.totalAmount}} </p>
             </mat-card-content>
         </div>
     </div>
