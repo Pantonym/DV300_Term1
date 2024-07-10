@@ -4,7 +4,7 @@
         <div class="imageANDbutton left">
             <img [src]="recipeItem.image" width="80" />
             
-            <button class="btnCraft" (click)="craftNewRecipe(recipeItem.id!, 3)">Craft</button>
+            <button class="btnCraft" (click)="craftNewRecipe(recipeItem.id!, 1)">Craft</button>
         </div>
 
         <div class="left">
@@ -15,7 +15,7 @@
                 <br>
                 <br>
 
-                <p class="amount"> You Have: {{recipeItem.totalWarehouse3}} &nbsp; </p>
+                <p class="amount"> You Have: {{recipeItem.totalWarehouse1}} &nbsp; </p>
 
                 @if(this.recipeItem.isCraftable == false){
                 <p style="color: red;">Not enough ingredients available in inventory</p>
