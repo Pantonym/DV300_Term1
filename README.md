@@ -104,7 +104,7 @@ SpyNet is a management website where users can purchase ingredients and craft it
 * It is maintained by Google, and follows single-page routing.
 * Used to create the frontend of the website.
 <p>Angular TS allowed us to build and test the frontend of the website.</p>
-<img src="spynet/src/assets/readmeAssets/AXIOS.png" alt="AJAX-Logo" style="width: 400px; height: 225px;"/>
+<img src="spynet/src/assets/readmeAssets/Angular.png" alt="Angular-Logo" style="width: 400px; height: 225px;"/>
 
 <!-- PostgreSQL -->
 #### PostgreSQL
@@ -215,7 +215,7 @@ if (this.login.value.email != "" && this.login.value.password != "") {
 }
 ```
 4. Warehouse Overview Page - Individual Warehouse Information (Group Mate Responsibility: Nico & Glen)
-* Dynamic cards are used to generate the output for each of the warehouses. There are also three buttons, each of which sends a parameter to the URL which changes which set of the cards are displayed, therefore the suer is able to see each warehouse's information. It also saves the active warehouse to SessionStorage for use in other files.
+* Dynamic cards are used to generate the output for each of the warehouses. There are also three buttons, each of which sends a parameter to the URL which changes which set of the cards are displayed, therefore the user is able to see each warehouse's information. It also saves the active warehouse to SessionStorage for use in other files.
 ```
 <button (click)="warehouseChange3()" class="btnWarehouse button-80" role="button"><a routerLink="/warehouses/1" routerLinkActive="active"> Agent Bigears: 003 
 </a></button>
@@ -506,7 +506,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## References
 * https://jng15.medium.com/typescript-basics-type-system-cac2e848b4aa (TypeScript Logo Image)
-* https://www.axios.com/press-past-releases/axios-launches-centralized-news-hub (AXIOS Logo Image)
+* https://en.m.wikipedia.org/wiki/File:Angular_full_color_logo.svg (Angular Logo Image)
 * https://medium.com/@amitrani/getting-started-with-postgresql-5990b54f7169 (PostgreSQL Logo Image)
 
 ## Backend Link
