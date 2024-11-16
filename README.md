@@ -472,14 +472,15 @@ Warehouses Page
 ### Mockups
 <img src="spynet/src/assets/readmeAssets/Dashboard.jpg" alt="Mockup" style="height: 600px"/>
 <img src="spynet/src/assets/readmeAssets/Login.jpg" alt="Mockup" style="height: 600px"/>
-<img src="spynet/src/assets/readmeAssets/MarketplaceAdmin.jpg" alt="Mockup" style="height: 600px"/>
-<img src="spynet/src/assets/readmeAssets/Warehouses.jpg" alt="Mockup" style="height: 600px"/>
+<img src="spynet/src/assets/readmeAssets/Poster1.png" alt="Mockup" style="height: 600px"/>
+<img src="spynet/src/assets/readmeAssets/Poster2.png" alt="Mockup" style="height: 600px"/>
 
 <br>
 
 <!-- Video Demonstration -->
 ### Video Demonstration
 **Video Demonstration:** <a href="https://drive.google.com/file/d/1Txd197Wk5i3jK9rxGzuZIU-WJIWO6FcR/view?usp=sharing">Google Drive Link</a>
+**Demo Video:** <a href="https://youtu.be/RSS1kN0omxE">Youtube Link</a>
 
 <!-- LICENSE -->
 ## License
