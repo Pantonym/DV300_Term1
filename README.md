@@ -9,7 +9,7 @@
 <!-- Logo and link to repository -->
 <p align="center">
   <a href="https://github.com/Pantonym/DV300_Term1">
-    <img src="spynet/src/assets/readmeAssets/Logo.png" width="100px">
+    <img src="spynet/src/assets/readmeAssets/LogoWhite.png" width="100px">
   </a>
 </p>
 
